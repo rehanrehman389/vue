@@ -9,6 +9,7 @@
 - **Axios** → library for API calls (GET, POST, etc).  
 
 💡 Example (Teleport):
+and Example (Dynamic Components + KeepAlive):
 ```vue
 <template>
   <teleport to="body">
@@ -18,3 +19,25 @@
     </div>
   </teleport>
 </template>
+
+
+<template>
+  <keep-alive>
+    <component :is="currentTabComponent" />
+  </keep-alive>
+
+  <button @click="currentTabComponent = 'TabOne'">Tab One</button>
+  <button @click="currentTabComponent = 'TabTwo'">Tab Two</button>
+</template>
+
+<script>
+import TabOne from './TabOne.vue'
+import TabTwo from './TabTwo.vue'
+
+export default {
+  components: { TabOne, TabTwo },
+  data() {
+    return { currentTabComponent: 'TabOne' }
+  }
+}
+</script>
