@@ -2,7 +2,8 @@
 
 ## 5. Two-Way Binding (`v-model`)
 - Syncs input with data property.  
-- Works both ways → Template ↔ Script.  
+- Works both ways → Template ↔ Script.
+- Try wrapping form data inside a <pre>{{ form }}</pre> block to easily visualize how v-model keeps everything in sync.
 - Supports modifiers:  
   - `.trim` → removes whitespace  
   - `.lazy` → updates on change instead of input  
